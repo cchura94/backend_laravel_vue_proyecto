@@ -18,3 +18,14 @@ git init
 ```
 git remote add origin https://github.com/cchura94/backend_laravel_vue_proyecto.git
 ```
+## Actualizar el Repositorio
+```
+git add .
+git commit -m "Proyecto Base (CRUD Usuarios)"
+git push origin master
+```
+
+## obtener los nuevos cambios
+```
+git pull origin master
+``` 

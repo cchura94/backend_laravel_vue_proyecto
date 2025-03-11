@@ -1,0 +1,19 @@
+### Login
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "cristian@mail.com",
+    "password": "cristian54321"
+}
+
+### perfil
+GET http://127.0.0.1:8000/api/v1/auth/profile
+Accept: application/json
+Authorization: Bearer 4|FHwfDWlf2pDeO4YoCglKzBSaoWUAwQL2pZLjspcq2ee074c1
+
+### Salir
+POST http://127.0.0.1:8000/api/v1/auth/logout
+Accept: application/json
+Authorization: Bearer 4|FHwfDWlf2pDeO4YoCglKzBSaoWUAwQL2pZLjspcq2ee074c1
