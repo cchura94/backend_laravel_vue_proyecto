@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DocumentoController;
+use App\Http\Controllers\PermisoController;
+use App\Http\Controllers\PersonaController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,6 +24,12 @@ Route::middleware('auth:sanctum')->group(function(){
 
     // CRUD ROLES
     Route::apiResource("role", RoleController::class);
+    Route::apiResource("persona", PersonaController::class);
+    Route::apiResource("permiso", PermisoController::class);
+    Route::apiResource("documento", DocumentoController::class);
+
+
+
 });
 
 // Auth
