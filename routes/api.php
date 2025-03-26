@@ -28,8 +28,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource("permiso", PermisoController::class);
     Route::apiResource("documento", DocumentoController::class);
 
-
-
 });
 
 // Auth

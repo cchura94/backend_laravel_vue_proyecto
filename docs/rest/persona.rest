@@ -1,0 +1,15 @@
+GET http://127.0.0.1:8000/api/persona
+Accept: application/json
+Authorization: Bearer 1|sntQOXnIER4zDWTVDLbXG4PzgJIVAa5Q5UmfERbffc0ee853
+
+### guardar
+
+POST http://127.0.0.1:8000/api/persona
+Accept: application/json
+Authorization: Bearer 1|sntQOXnIER4zDWTVDLbXG4PzgJIVAa5Q5UmfERbffc0ee853
+Content-Type: application/json
+
+{
+    "nombres": "SIMON",
+    "apellidos": "Prueba2"
+}
