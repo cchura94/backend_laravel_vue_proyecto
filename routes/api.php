@@ -15,6 +15,13 @@ Route::get('/user', function (Request $request) {
 
 
 Route::middleware('auth:sanctum')->group(function(){
+
+    // registrar Persona con cuenta de usuario
+    Route::post("/persona/guardar-persona-user", [PersonaController::class, "funGuardarPersonaUser"]);
+    // asignar cuenta user a persona
+    Route::post("/persona/{id}/adduser", [PersonaController::class, "funAddUserPersona"]);
+
+
     // CRUD API REST USER
     Route::get("/user", [UserController::class, "funListar"]);
     Route::post("/user", [UserController::class, "funGuardar"]);
@@ -43,4 +50,7 @@ Route::prefix('/v1/auth')->group(function(){
     });
 });
 
-
+// redireccion (NO AUTENTICADO)
+Route::get("/no-autenticado", function(){
+    return ["mensaje" => "No tienes permiso para ver esta Pagina"];
+})->name("login");
