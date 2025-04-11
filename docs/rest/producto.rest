@@ -1,0 +1,18 @@
+GET http://127.0.0.1:8000/api/producto?page=1&limit=10&q=
+Authorization: Bearer 24|gBODTAgfWtJTTYnWzsAgWaKD14ceyCfn51isCr7n1a5294da
+
+### GUARDAR
+POST http://127.0.0.1:8000/api/producto
+Authorization: Bearer 24|gBODTAgfWtJTTYnWzsAgWaKD14ceyCfn51isCr7n1a5294da
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nombre": "MOUSE",
+    "categoria_id": 3
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/producto/5
+Authorization: Bearer 24|gBODTAgfWtJTTYnWzsAgWaKD14ceyCfn51isCr7n1a5294da
+Accept: application/json

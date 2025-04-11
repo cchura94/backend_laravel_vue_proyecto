@@ -1,0 +1,13 @@
+GET http://127.0.0.1:8000/api/categoria
+Authorization: Bearer 24|gBODTAgfWtJTTYnWzsAgWaKD14ceyCfn51isCr7n1a5294da
+
+### Guardar
+POST http://127.0.0.1:8000/api/categoria
+Authorization: Bearer 24|gBODTAgfWtJTTYnWzsAgWaKD14ceyCfn51isCr7n1a5294da
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nombre": "ELECTRONICOS",
+    "detalle": "PARA EQUIPOS DE COMPUTACION"
+}
