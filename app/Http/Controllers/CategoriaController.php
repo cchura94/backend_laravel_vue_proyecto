@@ -13,7 +13,9 @@ class CategoriaController extends Controller
     public function index()
     {
         try {
-            $categorias = Categoria::orderBy('id', 'desc')->get();
+            $categorias = Categoria::orderBy('id', 'desc')
+                                    // ->where('estado', true)
+                                    ->get();
 
             return response()->json($categorias, 200);
 
@@ -88,7 +90,9 @@ class CategoriaController extends Controller
     {
         try {
             $categoria = Categoria::findOrFail($id);
-            $categoria->estado = false;
+            $categoria->estado = !$categoria->estado;
+            $categoria->update();
+            
             return response()->json(["message" => "Categoria Actualizada"], 201);
 
         } catch (\Exception $e) {

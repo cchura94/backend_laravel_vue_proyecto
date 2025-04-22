@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class ClienteController extends Controller
 {
@@ -58,5 +59,16 @@ class ClienteController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function buscarCliente(Request $request)
+    {
+        $buscar = $request->q;
+
+        $cliente = Cliente::where('nombre_completo', "like", "%$buscar%")
+                            ->orwhere('ci_nit', "like", "%$buscar%")
+                    ->first();
+        return response()->json($cliente, 200);
+
     }
 }
