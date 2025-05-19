@@ -17,3 +17,15 @@ Authorization: Bearer 4|FHwfDWlf2pDeO4YoCglKzBSaoWUAwQL2pZLjspcq2ee074c1
 POST http://127.0.0.1:8000/api/v1/auth/logout
 Accept: application/json
 Authorization: Bearer 4|FHwfDWlf2pDeO4YoCglKzBSaoWUAwQL2pZLjspcq2ee074c1
+
+
+### registro usuario
+POST https://ventaslaravue.blumbit.net/back/public/api/v1/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@mail.com",
+    "password": "admin54321"
+}

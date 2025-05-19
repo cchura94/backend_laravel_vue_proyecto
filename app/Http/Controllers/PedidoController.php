@@ -6,6 +6,7 @@ use App\Models\Cliente;
 use App\Models\Pedido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PedidoController extends Controller
 {
@@ -77,6 +78,14 @@ class PedidoController extends Controller
         $pedido->update();
 
         return response()->json(["mensaje" => "Pedido Registrado"]);
+
+    }
+
+    public function funReportePDF($id){
+        $pedido = Pedido::with(["cliente", "productos"])->find($id);
+
+        $pdf = Pdf::loadView('pdf.pedidos', ["pedido" => $pedido]);
+        return $pdf->download('pedidos.pdf');
 
     }
 
